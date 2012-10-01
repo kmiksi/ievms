@@ -8,17 +8,17 @@ can be extremely difficult. The ievms scripts aim to facilitate that process usi
 VirtualBox on Linux or OS X. With a single command, you can have IE6, IE7, IE8
 and IE9 running in separate virtual machines.
 
-.. image:: http://pledgie.com/campaigns/15995.png?skin_name=chrome
-   :alt: Click here to lend your support to ievms and make a donation at pledgie.com!
-   :target: http://pledgie.com/campaigns/15995
+Thanks to Greg "xdissent" Thornton (https://github.com/xdissent) for starting this project.
 
 
 Requirements
 ============
 
 * VirtualBox (http://virtualbox.org)
-* Curl (Ubuntu: ``sudo apt-get install curl``)
-* Linux Only: unrar (Ubuntu: ``sudo apt-get install unrar``)
+* Axel OR Curl OR Wget
+* p7zip-rar OR wine OR unrar (download unrar locally) for rar
+* p7zip OR cabextract OR wine for IE6 cab
+* mkisofs (Linux) OR hdiutil (OS X) for IE6 drivers
 * Patience
 
 
@@ -27,15 +27,19 @@ Installation
 
 1. Install VirtualBox.
 
-2. Download and unpack ievms:
+2. Download ievms.sh and run:
 
    * Install IE versions 6, 7, 8 and 9.
 
-         curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | bash
+         bash ievms.sh
 
    * Install specific IE versions (IE7 and IE9 only for example):
 
-         curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | IEVMS_VERSIONS="7 9" bash
+         IEVMS_VERSIONS="7 9" bash ievms.sh
+
+   * Install on specific location (disk space issues):
+
+         INSTALL_PATH="/media/DiscHasSpace/ievms" bash ievms.sh
 
 3. Launch Virtual Box.
 
@@ -71,16 +75,7 @@ Specifying the install path
 
 To specify where the VMs are installed, use the INSTALL_PATH variable:
 
-    curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | INSTALL_PATH="/Path/to/.ievms" bash
-
-
-Passing additional options to curl
-----------------------------------
-
-The ``curl`` command is passed any options present in the ``CURL_OPTS`` 
-environment variable. For example, you can set a download speed limit:
-
-    curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | CURL_OPTS="--limit-rate 50k" bash
+    INSTALL_PATH="/Path/to/.ievms" bash ievms.sh
 
 
 Features
