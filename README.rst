@@ -95,7 +95,25 @@ Clean Snapshot
     effectively allowing your VM to work indefinitely.
 
 
-Support Axel, Wget or Curl
+Support for cabextract, p7zip, or wine to extract cab (IE6)
+    If you have any of these packages available on your system, then we will use it!
+    If not, p7zip (Linux x86) or unrar will be downloaded and used.
+
+
+Support for unrar, p7zip-rar, wine to extract rar (IE7 and above)
+    Just the same. If you dont have any of these packages, then p7zip (Linux x86) or unrar will be downloaded.
+
+
+Latest unrar from rarlab.com
+    If needed, the script will download latest version of unrar (freeware), packed for osx, linux or linux-x64.
+
+
+Wine?
+    All the packages provided by Microsoft are self-extract containers (cab or rar) for Windows.
+    Wine is a compatibility layer that provide support to use the file as your own extractor.
+
+
+Support for Axel, Wget or Curl
     If you have ``axel`` download accelerator on your system, it will be used!
     Otherwise, the script will look for ``wget`` or ``curl`` commands to perform downloads and resumes.
 
