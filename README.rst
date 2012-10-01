@@ -95,10 +95,15 @@ Clean Snapshot
     effectively allowing your VM to work indefinitely.
 
 
+Support Axel, Wget or Curl
+    If you have ``axel`` download accelerator on your system, it will be used!
+    Otherwise, the script will look for ``wget`` or ``curl`` commands to perform downloads and resumes.
+
+
 Resuming Downloads
-    If one of the comically large files fails to download, the ``curl`` 
-    command used will automatically attempt to resume where it left off. 
-    Thanks, rcmachado (https://github.com/rcmachado).
+    If one of the comically large files fails to download, the downloader
+    command used will automatically attempt to resume where it left off.
+    Thanks to a ``.part`` suffix, the downloads can be easily identifyed and resumed.
 
 
 License
